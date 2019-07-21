@@ -1,0 +1,46 @@
+@charset "utf-8";
+/*reset css*/
+/*reset css*/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption, .footer, .header, hgroup,menu, nav, output, ruby, section, summary,time, mark, audio, video{margin: 0;padding: 0;border: 0;font-size: 100%;font-size: 14px;font: inherit;vertical-align: baseline;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,.footer, .header, hgroup, menu, nav, section {display: block;}
+ol, ul {list-style: none;}
+blockquote,q {quotes: none;}
+a{text-decoration: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+textarea{resize: none;font-family:arial,"黑体";}
+*{outline: none;-webkit-tap-highlight-color:rgba(255,0,0,0);}
+a:focus,a:active,a:link,a:visited,a:hover{outline: none;-webkit-tap-highlight-color:rgba(255,0,0,0);}
+input{font-family:Helvetica,Tahoma,Arial,STXihei,"华文细黑","Microsoft YaHei","微软雅黑",sans-serif;}
+
+/*清除浮动*/
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.hide{display: none;}
+.mt-20{margin-top: .2rem;}
+
+body{font-family:Helvetica,Tahoma,Arial,STXihei,"华文细黑","Microsoft YaHei","微软雅黑",sans-serif;font-size: 0.2rem;color: #333;background:#FFF;}
+
+a{color: #303030}
+
+/* 对话框 */
+.tempConfirmShade{position: fixed;background: #000000;left: 0;top: 0;bottom: 0;right: 0;display:none;z-index: 950;}
+.tempConfirm{position: fixed;background: #FFFFFF;left: 0;top: 0;display:none;width:5.8rem;min-height: 1rem;text-align: left;z-index: 951;border-radius: .1rem;}
+.tempConfirm .popTitle{height:.6rem;}
+.tempConfirm .popTitle .titleCount{margin:0 0.60rem;font-size: 0.42rem;text-align: center;font-family: fz;color: #ff6d5c;line-height: 0.5rem;margin-top: 0.5rem;}
+.tempConfirm .popTitle .tempConfirmCloes{display:block;position: absolute;width: 0.35rem;height: 0.35rem;top: 0.2rem;right: 0.2rem;background: url("../images/pop-close.png") no-repeat;background-size: 100% auto;}
+.tempConfirm .tempConfirmContents{padding: 1px 0;}
+.tempConfirm .tempConfirmButtonBox{text-align: center;margin:0.20rem 0 .4rem;}
+.tempConfirm .tempConfirmButtonBox a{display:inline-block;height:0.84rem;font-size: 0.36rem;color: #ffffff;text-align: center;line-height:0.84rem;background: #8ECE2A;border-radius: .1rem;margin: 0 .3rem;width: 2rem;}
+.tempConfirm .tempConfirmButtonBox a:first-child{margin-left: 0;}
+.tempConfirm .tempConfirmButtonBox a:last-child{margin-right: 0;}
+.tempConfirm .tempConfirmButtonBox.butOne a{width:5.4rem;padding: 0;margin: 0;}
+
+
+.tempConfirm .popMsg{margin: 0.8rem 0 .6rem;text-align: center;font-size: .36rem;color: #444444;}
+.tempConfirm .popMsg h3{font-size: .48rem;font-family: SimSun,"宋体";}
+
+.tempConfirm .popText{margin: 0.8rem 0.6rem 0.6rem;font-size: .28rem;line-height: 2em;color: #282828;}
+/* 弹出提示信息*/
+.tempMsg{position: absolute;z-index: 999;display: none; padding: .2rem .3rem;background:rgba(0,0,0,0.8);color: #FFF;font-size: .3rem;max-width: 5rem;line-height: .4rem;border-radius: .15rem;}
+
