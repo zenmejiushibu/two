@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/font.js"></script>
+		<script src="js/jquery-3.1.1.min.js"></script>
+	</head>
+	<body>
+		<div class="top">流量超市</div>
+		<div class="header">
+			<div class="header_area">
+				<span class="wel">河北移动欢迎您:</span>
+				<span class="phone">游客</span>
+				<span class="quit">退出</span>
+				<span class="change">登录</span>
+			</div>
+		</div>
+		<div class="nav">
+			<div class="nav_area">
+				<ul class="list">
+					<li style="color:#ff4f57" class="only" >
+						<span>热门业务</span>
+						<img src="img/b.png" class="img"/>
+					</li>
+					<li data-type="fei">话费支付</li>
+					<li data-type="ji">积分支付</li>
+					<li data-type="last">积分+话费</li>
+				</ul>
+			</div>
+		</div>
+		<div class="section">
+			<div class="section_area">
+				<ul class="text" style="display: block;">
+					<li>
+						<p class="one">100MB</p>
+						<p class="two">10元</p>
+						<p class="three">省内流量包</p>
+					</li>
+					<li>
+						<p class="one">3000MB</p>
+						<p class="two">180元/半年</p>
+						<p class="three"><span>国内<span>流量包</p>
+					</li>
+					<li>
+						<p class="one">420MB</p>
+						<p class="two">60元/半年</p>
+						<p class="three"><span>国内<span>流量包</p>
+					</li>
+					<li>
+						<p class="one">不限量</p>
+						<p class="two">100元/月</p>
+						<p class="three">省内流量包</p>
+					</li>
+					<li>
+						<p class="one">不限量</p>
+						<p class="two">50元/月</p>
+						<p class="three">省内流量包</p>
+					</li>
+					
+					<li>
+						<p class="one">20GB</p>
+						<p class="two">100元/月</p>
+						<p class="three"><span>国内<span>+省内</p>
+					</li>
+					<li>
+						<p class="one">10GB</p>
+						<p class="two">60元/半年</p>
+						<p class="three">省内流量包</p>
+					</li>
+					<li>
+						<p class="one">不限量</p>
+						<p class="two">100元/月</p>
+						<p class="three"><span>国内<span>+省内</p>
+					</li>
+					<li>
+						<p class="one">8GB</p>
+						<p class="two">50元/月</p>
+						<p class="three"><span>国内<span>+省内</p>
+					</li>
+					<li>
+						<p class="one">60GB</p>
+						<p class="two">200元/半年</p>
+						<p class="three"><span>国内<span>+省内</p>
+					</li>
+					<li>
+						<p class="one">国际漫游包</p>
+						<p class="two">60元/半年</p>
+						<p class="three">省内流量包</p>
+					</li>
+					<li>
+						<p class="one">100MB</p>
+						<p class="two">10元</p>
+						<p class="three"><span>国内<span>流量包</p>
+					</li>
+					<li>
+						<p class="one">29GB</p>
+						<p class="two">29元</p>
+						<p class="three"><span>国内<span>+省内</p>
+					</li>
+					<li>
+						<p class="one">1024MB</p>
+						<p class="two">10元</p>
+						<p class="three">省内流量包</p>
+					</li>
+					<li>
+						<p class="one">210MB</p>
+						<p class="two">30元/季度</p>
+						<p class="three">国内流量包</p>
+					</li>
+					<li>
+						<p class="one">1000MB</p>
+						<p class="two">10元</p>
+						<p class="three">省内流量包</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="new_div" style="display:block">
+			<form class="zhe_zhao">
+				<div class="bei_jing">
+					<img src="img/logn.png" />
+					<span>河北移动欢迎您</span>
+				</div>
+				<p class="zheng">手机号格式不正确哦！</p>
+				<div class="shou_ji">
+					<input type="text" placeholder="请输入您的手机号" />
+				</div>
+				<div class="yan_zheng_ma">
+					<input type="text" placeholder="请输入验证码" />
+					<a href="javascript:;">获取验证码</a>
+				</div>
+				<a class="deng_lu" href="javascript:;">立即登录</a>
+				<img src="img/close.png" class="close"/>
+			</form>
+		</div>
+		<div class="new">
+			<ul class="new_ul">
+				<li style="color:red" data-type="hua">小时加油包<span style="display:inline"><img src="img/c.png"/></span></li>
+				<li data-type="hua1">月末加油包<span><img src="img/c.png"/></span></li>
+				<li data-type="hua2">无线流量包<span><img src="img/c.png"/></span></li>
+			</ul>
+		</div>
+	</body>
+	<script>
+		//大的选项卡
+		$(document).on("click",".list>li",function(){
+			var index=$(this).index();
+			$(this).css("color","#ff4f57").siblings().css("color","#a6a5a5");
+			if(index>0){
+				$(".img").attr("src","img/bb.png")
+				zhe_zhao();
+			}else{
+				$(".img").attr("src","img/b.png")
+			}
+		})
+		
+		
+		//点第一个热门业务出来下拉
+		$(".only").click(function(){
+			$(".nav").css("border-bottom","0.01rem solid #ccc");
+			feng1();
+		})
+		
+		$(".new_ul>li").click(function(){
+			$(this).css("color","red").siblings().css("color","#333");
+			$(this).find("span").css("display","inline").parent().siblings().find("span").css("display","none");
+			zhe_zhao();
+		})
+		
+		var new_div=document.getElementsByClassName("new_div")[0];
+		var change=document.getElementsByClassName("change")[0];
+		var close=document.getElementsByClassName("close")[0];
+		var zhe=document.getElementsByClassName("zhe_zhao")[0];
+		var new1=document.getElementsByClassName("new")[0];
+		var phone2=document.getElementsByClassName("shou_ji")[0].getElementsByTagName("input")[0];
+		var zheng=document.getElementsByClassName("zheng")[0];
+		var kuan=document.documentElement.clientWidth||document.body.clientWidth;
+		var gao=document.documentElement.clientHeight||document.body.clientHeight;
+		window.onresize = function(){
+			kuan=document.documentElement.clientWidth||document.body.clientWidth;
+			gao=document.documentElement.clientHeight||document.body.clientHeight;
+			new_div.style.width=kuan+"px";
+			new_div.style.height=gao+"px";
+		}
+		function feng(){
+			document.body.style.overflow = "hidden";
+			new_div.style.display="block";
+			new_div.style.width=kuan+"px";
+			new_div.style.height=gao+"px";
+			new_div.style.backgroundColor="rgba(0,0,0,0.5)";
+			new_div.style.position="fixed";
+			new_div.style.left="0";
+			new_div.style.top="1.3rem";
+			new_div.style.zIndex=1000;
+		}
+		function feng1(){
+			document.body.style.overflow = "hidden";
+			new1.style.display="block";
+			var kuan=document.documentElement.clientWidth||document.body.clientWidth;
+			var gao=document.documentElement.clientHeight||document.body.clientHeight;
+			new1.style.width=kuan+"px";
+			new1.style.height=gao+"px";
+			new1.style.backgroundColor="rgba(0,0,0,0.5)";
+			new1.style.position="fixed";
+			new1.style.left="0";
+			new1.style.top="3.6rem";
+			new1.style.zIndex=1000;
+		}
+		
+		function zhe_zhao(){
+			new_div.style.display="none";
+			new1.style.display="none";
+			document.body.style.overflow="";
+		}
+		
+		change.onclick=function(){
+			feng();
+			zhe.style.display="block";
+		}
+		
+		close.onclick=function(){
+			zhe_zhao();
+			zhe.style.display="none";
+		}
+		
+		
+		//存储数据
+		//保存数据
+		function setItem(key,val){
+			window.localStorage.setItem(key,JSON.stringify(val))
+		}
+		
+		//获取数据
+		function getItem(key){
+			var val=window.localStorage.getItem(key);
+			//将获取到的json字符串转换为对象
+			val=JSON.parse(val);
+			return val;
+		}
+		
+		var user=getItem("userInfo");
+		$(".phone").html(user[0].phone);
+		
+		var arr=[];
+		$(".deng_lu").click(function(){
+			window.localStorage.clear();
+			arr.length=0;
+			var phone=$(".shou_ji>input").val();
+	
+			var val={
+				phone:phone
+			}
+			arr.push(val);
+			setItem("userInfo",arr);
+			
+			
+			//正则验证
+			phone2.onblur=function(){
+				var check=/^1(3|4|5|7|8)\d{9}$/;
+				if(check.test(phone2.value)){
+					zheng.style.display="none";
+				}else{
+					zheng.style.display="block";
+				}
+			}
+			
+			
+			if($(".yan_zheng_ma>input").val()!=""&&$(".zheng").css("display")=="none"){
+				var user=getItem("userInfo");
+				$(".phone").html(user[0].phone);
+				zhe_zhao();
+				$(".change").html("切换账号")
+			}
+		})
+		
+		$(".quit").click(function(){
+			var user=getItem("userInfo");
+			$(".phone").html("游客");
+			$(".change").html("登录")
+		})
+		
+		
+		//中间数据动态生成1
+		var list=[
+			{
+			  type:"hua",
+			  zhao:"100MB",
+			  money:"10元",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"hua",
+			  zhao:"3000MB",
+			  money:"180元/半年",
+			  bao:"<span>国内</span>流量包"
+			},
+			{
+			  type:"hua",
+			  zhao:"420MB",
+			  money:"60元/半年",
+			  bao:"<span>国内</span>流量包"
+			},
+			{
+			  type:"hua",
+			  zhao:"不限量",
+			  money:"100元/月",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"hua",
+			  zhao:"不限量",
+			  money:"50元/月",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"hua",
+			  zhao:"20GB",
+			  money:"100元/月",
+			  bao:"省内+<span>国内</span>"
+			},
+			{
+			  type:"hua",
+			  zhao:"10GB",
+			  money:"60元/半年",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"hua",
+			  zhao:"2GB",
+			  money:"30元/月",
+			  bao:"省内+<span>国内</span>"
+			},
+			{
+			  type:"hua",
+			  zhao:"8GB",
+			  money:"50元/月",
+			  bao:"省内+<span>国内</span>"
+			},
+			{
+			  type:"hua",
+			  zhao:"60GB",
+			  money:"200元/半年",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"hua",
+			  zhao:"国际漫游包",
+			  money:"10元",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"hua",
+			  zhao:"100MB",
+			  money:"10元",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"hua",
+			  zhao:"29GB",
+			  money:"10元",
+			  bao:"省内+<span>国内</span>"
+			},
+			{
+			  type:"hua",
+			  zhao:"1024MB",
+			  money:"10元",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"hua",
+			  zhao:"210MB",
+			  money:"30元/季度",
+			  bao:"<span>国内</span>流量包"
+			},
+			{
+			  type:"hua",
+			  zhao:"1000MB",
+			  money:"10元",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"last",
+			  zhao:"100MB",
+			  money:"10元",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"last",
+			  zhao:"1000MB",
+			  money:"10元",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"fei",
+			  zhao:"100MB",
+			  money:"10元",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"fei",
+			  zhao:"3000MB",
+			  money:"180元/半年",
+			  bao:"<span>国内</span>流量包"
+			},
+			{
+			  type:"fei",
+			  zhao:"420MB",
+			  money:"60元/半年",
+			  bao:"<span>国内</span>流量包"
+			},
+			{
+			 type:"fei",
+			  zhao:"不限量",
+			  money:"100元/月",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"fei",
+			  zhao:"不限量",
+			  money:"50元/月",
+			  bao:"省内流量包"
+			},
+			{
+			 type:"fei",
+			  zhao:"20GB",
+			  money:"100元/月",
+			  bao:"省内+<span>国内</span>"
+			},
+			{
+			  type:"fei",
+			  zhao:"10GB",
+			  money:"60元/半年",
+			  bao:"省内流量包"
+			},
+			{
+			  type:"fei",
+			  zhao:"2GB",
+			  money:"30元/月",
+			  bao:"省内+<span>国内</span>"
+			},
+			{
+			  type:"ji", 
+			  zhao:"2GB",
+			  money:"30元/月",
+			  bao:"省内+<span>国内</span>"
+			},
+			{
+				type:"ji",
+			  zhao:"8GB",
+			  money:"50元/月",
+			  bao:"省内+<span>国内</span>"
+			},
+			{
+				type:"ji",
+			  zhao:"60GB",
+			  money:"200元/半年",
+			  bao:"省内流量包"
+			},
+			{
+				type:"ji",
+			  zhao:"国际漫游包",
+			  money:"10元",
+			  bao:"省内流量包"
+			},
+			{
+				type:"ji",
+			  zhao:"100MB",
+			  money:"10元",
+			  bao:"省内流量包"
+			},
+			{
+				type:"ji",
+			  zhao:"29GB",
+			  money:"10元",
+			  bao:"省内+<span>国内</span>"
+			},
+			{
+				type:"ji",
+			  zhao:"1024MB",
+			  money:"10元",
+			  bao:"省内流量包"
+			},
+			{
+				type:"hua1",
+			  zhao:"21GB",
+			  money:"30元/月",
+			  bao:"月末加油包"
+			},
+			{
+				type:"hua1",
+			  zhao:"301GB",
+			  money:"30元/月",
+			  bao:"月末加油包"
+			},
+			{
+				type:"hua1",
+			  zhao:"421GB",
+			  money:"30元/月",
+			  bao:"月末加油包"
+			},
+			{
+				type:"hua1",
+			  zhao:"2110GB",
+			  money:"30元/月",
+			  bao:"月末加油包"
+			},
+			{
+				type:"hua1",
+			  zhao:"不限量1",
+			  money:"30元/月",
+			  bao:"月末加油包"
+			},
+			{
+				type:"hua1",
+			  zhao:"21GB",
+			  money:"30元/月",
+			  bao:"月末加油包"
+			},
+			{
+				type:"hua1",
+			  zhao:"11GB",
+			  money:"30元/月",
+			  bao:"月末加油包"
+			},
+			{
+				type:"hua1",
+			  zhao:"3GB",
+			  money:"30元/月",
+			  bao:"月末加油包"
+			},
+			{
+				type:"hua2",
+			  zhao:"22GB",
+			  money:"30元/月",
+			  bao:"无线流量包"
+			},
+			{
+				type:"hua2",
+			  zhao:"302GB",
+			  money:"30元/月",
+			  bao:"无线流量包"
+			},
+			{
+				type:"hua2",
+			  zhao:"422GB",
+			  money:"30元/月",
+			  bao:"无线流量包"
+			},
+			{
+				type:"hua2",
+			  zhao:"2120GB",
+			  money:"30元/月",
+			  bao:"无线流量包"
+			},
+			{
+				type:"hua2",
+			  zhao:"不限量2",
+			  money:"30元/月",
+			  bao:"无线流量包"
+			}
+			
+		]
+			function show(arr){
+			var len = arr.length;
+			var html = "";
+			for(var i=0;i<len;i++){
+				html+='<li>'+
+						'<p class="one">'+arr[i].zhao+'</p>'+
+						'<p class="two">'+arr[i].money+'</p>'+
+						'<p class="three">'+arr[i].bao+'</p>'+
+						'</li>';
+			}
+			$(".text").html(html);
+		}
+		
+		$(".list>li").on("click",function(){
+		   var type = $(this).attr("data-type");
+		   if(!type){
+			  return; 
+		   }
+			var newarr= [];
+			for(var i=0,len=list.length;i<len;i++){
+				if(list[i].type == type){
+					newarr.push(list[i])
+				};
+			};
+			console.log(newarr);
+			show(newarr);
+		})
+		
+		$(".new_ul>li").on("click",function(){
+		   var type = $(this).attr("data-type");
+			var newarr= [];
+			for(var i=0,len=list.length;i<len;i++){
+				if(list[i].type == type){
+					newarr.push(list[i])
+				};
+			};
+			console.log(newarr);
+			show(newarr);
+		})
+	</script>
+</html>
